@@ -1,0 +1,102 @@
+/* Estilos generales de css*/
+body
+{ font-family: Arial, sans-serif;
+ backgroud-color:#f5f5f5;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+/* para el contenedor*/
+.contenedor{
+  max-Width:800px;
+  margin:20px auto;
+  padding: 20p;
+  background:#fff;
+  box-shadow: o o 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+
+}
+/* cabecera*/
+.cabecera{
+  text-aling: center;
+  color:#333;
+  margin buttom: 20px;
+}
+h2{
+  fond-zise:28px;
+}
+/*Datos*/
+.Datos{
+  font-weight: bold;
+  margin-buttom: 20px;
+}
+
+input[type="text"]{
+  padding: 8px;
+  margin-ringht: 10px;
+  border-radius: 5px;
+}
+/* esto para los botones*/
+buttom {
+  padding: 10px 15px;
+  margin: 10px  5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button: hover{
+  background-color: #0056b3;
+}
+/* contenedor para los votos*/
+.contenedor-votos{
+  margin-top: 30px;
+}
+/* contenedor-votos*/
+span: {
+  font-weigth: bold;
+  margin-rigth: 10px;
+}
+/*votos*/
+.votos{
+  display: flex;
+  aling-items: center;
+  justify-contenido t: space-between;
+  margin: 20px 0;
+}
+  
+/* votos*/
+.votos img{
+  width:150p; 
+  heigth: auto;
+  border-radius: 10px;
+  margin-ring: 10px;
+}
+
+/*Resultado de la votación */
+.contenedor-resultado{
+  margin-top: 30px;
+  padding: 15px;
+  background:# e9ecef;
+  border-radius:10px;
+  text-align: center;
+}
+
+.resultado {
+  font-size: 20px;
+  font-weigth: bold;
+  margin: 10px 0;
+/* Hasta ahora he egregado el estilo CSS para elsistema de votacion*/
+}
+
+  
+  
+  
+  
+  
+
+
+
+ 
