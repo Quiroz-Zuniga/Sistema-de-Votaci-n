@@ -8,35 +8,42 @@
     <title>Votos</title>
 </head>
 <body>
-    <div class="contenedor">
-       <h1>Candidatos</h1>
-        <div class="Datos">
-            <input type="text">
-            <button>Agregar participantes</button>
-            <button>Reiniciar Votación</button>
-        </div>
-        <div class="contenedor-Votos">
-            <div><span>Resultado de Votación</span>Exportar <button>CSV</button></div>
-        <div class="votos">
-            <p>A <span>(0 votos)</span></p>
-            <img src="" alt="" width="200px" height="200px">
-            <button>+ Agregar Voto</button>
-            <button>-Quitar Voto</button>
-        </div>   
-        <div class="votos">
-            <p>B <span>(0 votos)</span></p>
-            <img src="" alt="" width="200px" height="200px">
-            <button>+ Agregar Voto</button>
-            <button>-Quitar Voto</button>
-        </div>   
-        <div class="votos">
-            <p>C <span>(0 votos)</span></p>
-            <img src="" alt="" width="200px" height="200px">
-            <button>+ Agregar Voto</button>
-            <button>-Quitar Voto</button>
-        </div>  
-        </div> 
-    </div>
-    <script src="index.js"></script>
-</body>
+<header>
+    <h1>Votacion</h1>
+    </header>
+    <main>
+        <form id="VoteForm">
+            <p>Seleccione su opcion:</p>
+            <div class="candidate">
+                <label>
+                    <input type="radio" name="candidate" value="opcionLinus_Torvals" required>
+                    <img src="/Linus-Torvalds.webp" alt="Imagen de Opcion Linus Torvalds" width="400px" height="400px">
+                    Linus Torvalds
+                </label>
+            </div>
+            <div class="candidate">
+                <label>
+                    <input type="radio" name="candidate" value="opcionJame_Gosling">
+                    <img src="/James Gosling.png" alt="Imagen de Opcion Jame Gosling" width="400px" height="400px">
+                    Jame Gosling
+                </label>
+            </div>
+            <div class="candidate">
+                <label>
+                    <input type="radio" name="candidate" value="opcionDennis_Ritchie" width="400px" height="400px">
+                    Dennis Ritchie 
+                    </label>
+                    </div>
+                    <div class="candidate">
+                        <label>
+                            <input type="radio" name="candidate" value="opcionAlan-Turing">
+                            <IMG src="/Alan-Turing.jnp" alt="Imagen de Opcion Alan-Turing" width="400px" height="400px">
+                                Alan Turing 
+                        </label>
+                        </div>
+                        <button type="submit">Enviar Voto</button>
+        </form>
+    </main>
+                </body>
+
 </html>
