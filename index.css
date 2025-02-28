@@ -1,4 +1,6 @@
 /* Espacio de Root */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root{
     margin: 0;
     padding: 0;
@@ -8,7 +10,24 @@
     --colorThree: #2DA1CC;
 }
  body {
-    background-color: var(--colorThree);
+    background-color: var(--colorWhite);
     margin: 0 ;
     padding: 0;
  }
+
+
+ h1, p, a, button, label, input{
+    color: var(--colorThree);
+    text-align: center;
+    text-wrap: wrap;
+ }
+ h1{
+    font-family: 'Nunito';
+    font-size: 22px;
+ }
+
+ p{
+    font-family: 'Nunito';
+    font-size: 18px;
+ }
+
