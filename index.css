@@ -1,0 +1,14 @@
+/* Espacio de Root */
+:root{
+    margin: 0;
+    padding: 0;
+    --colorWhite: #FFFFFF;
+    --cololrBlueOne: #1C29E5;
+    --colorBlueTwo: #296BE5;
+    --colorThree: #2DA1CC;
+}
+ body {
+    background-color: var(--colorThree);
+    margin: 0 ;
+    padding: 0;
+ }
