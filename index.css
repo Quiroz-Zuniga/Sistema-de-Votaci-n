@@ -2,17 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root{
-    margin: 0;
-    padding: 0;
     --colorWhite: #FFFFFF;
     --cololrBlueOne: #1C29E5;
     --colorBlueTwo: #296BE5;
     --colorThree: #2DA1CC;
 }
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
  body {
     background-color: var(--colorWhite);
-    margin: 0 ;
-    padding: 0;
+    margin: 0px ;
+    padding: 0px;
+    font-family: 'Nunito';
  }
 
 
@@ -37,3 +43,18 @@
     padding: 20px;
  }
 
+/* input */
+.email  {
+   margin: 10px;
+}
+
+#logingForm {
+
+   display: flex;
+   flex-direction: column;
+   margin: 25px;
+}
+
+.button-login{
+   margin: 10px;
+}
