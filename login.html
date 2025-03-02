@@ -8,15 +8,22 @@
 </head>
 <body>
 
-    <h1>Inicio de sesión</h1>
-</header> 
-<main>
-    <form id="logingForm"> 
+<main class="main_login">
+    <form id="logingForm" class="form_login"> 
+        <header class="header_login">
+            <h1 class="h1_login">Inicio de sesión</h1>
+        </header> 
         <!-- <label for="email">Correo electronico:</label> -->
         <input class="email" type="email" id="email" name="email" placeholder="Correo Electronico" required> 
         <!-- <label for="password"> contraseña:</label> -->
-        <input class="email" type="password" id="password" name="password" placeholder="contraseña" required> 
-        <button class="button-login" type="submit">Iniciar sesion</button>
+         <div class="mostrarcontraseña">
+            <input class="email" type="password" id="password" name="password"          placeholder="Contraseña" required> 
+            <label for="mostarcontraseña">
+            <input type="checkbox" id="mostarcontraseña"> Mostar contraseña 
+            </label>
+         </div>
+        <button class="button-login" type="submit">Iniciar sesión</button>
+        <a href="/register.html" target="_blank">Olvidaste la contraseña?</a>
         </form>
         </main>
         <script src="index.js"></script>

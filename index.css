@@ -58,3 +58,104 @@
 .button-login{
    margin: 10px;
 }
+
+/* Trabajando con el login */
+
+.heade_index {
+   margin: 20px;
+   padding: 10px;
+}
+
+.h1_index{
+   margin: 20px;
+   padding: 10px;
+}
+.p_index{
+   margin: 20px;
+   padding: 10px;
+}
+.main_index{
+   margin: 40px;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   max-width: 100%;
+   align-items: center;
+
+}
+
+
+
+/* Login */
+
+.main_login{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+
+.form_login{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0  0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form_login input {
+   margin-bottom: 10px;
+   padding: 10px;
+   width: 250px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   text-align: left;
+}
+
+.form_login input:focus {
+   border-color: var(--colorWhite);
+   /* box-shadow: 0 0 5px rgba(0, 2, 5, 0.5); */
+   outline: none;
+}
+
+.form_login a {
+ color: var(--colorThree);
+}
+
+.form_login a:hover{
+   color: var(--colorBlueTwo);
+}
+
+.button-login{
+   background-color: var(--cololrBlueOne);
+   color:var(--colorWhite);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s ease;
+}
+
+.button-login:hover{
+   background-color: var(--colorBlueTwo) ;
+}
+
+.mostrarcontraseña{
+   display: flex;
+   flex-direction: column;
+   align-items:first baseline;
+   margin-bottom: 10px;
+}
+
+#mostarcontraseña{
+   max-width:10px ;
+}
+
+.mostrarcontraseña label{
+   margin-top: 10px;
+   color: var(--colorThree);
+}
+
+/* index */
