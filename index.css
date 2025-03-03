@@ -27,7 +27,7 @@
     text-align: center;
     text-wrap: wrap;
  }
- h1{
+ .heade_index h1{
     font-family: 'Nunito';
     font-size: 5vw;
  }
@@ -244,3 +244,65 @@
 .button_index:hover {
    background-color: var(--colorBlueTwo);
 }
+
+/* registro */
+.header_register {
+   margin: 20px;
+   padding: 10px;
+   text-align: center;
+   color: white;
+}
+
+.h1_register {
+   margin: 20px;
+   padding: 10px;
+}
+
+.main_register {
+   margin: 40px;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   max-width: 100%;
+   align-items: center;
+}
+
+.form_register {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form_register input {
+   margin-bottom: 10px;
+   padding: 10px;
+   width: 250px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   text-align: left;
+}
+
+.form_register input:focus {
+   border-color: var(--colorWhite);
+   outline: none;
+}
+
+.button-register {
+   background-color: var(--cololrBlueOne);
+   color: var(--colorWhite);
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s ease;
+}
+
+.button-register:hover {
+   background-color: var(--colorBlueTwo);
+}
+
