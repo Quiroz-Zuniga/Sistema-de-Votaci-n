@@ -12,7 +12,7 @@ function getUserData() {
     };
 }         
 //Ejecutar cuando el DOM este completamente cargado
-document.addEventListener('DOMContentLoaded') , function() {
+document.addEventListener('DOMContentLoaded' , function() {
     //Identificar la pagina actual
     const page = document.body.id;
 
@@ -27,26 +27,25 @@ document.addEventListener('DOMContentLoaded') , function() {
 
         });
     }
-}
 // codigo para la pagina de registro (register.html)
 if (page ==='registerPage') {
-document.getElementById('registerForm').addEventListener('submin' , function(event){
+document.getElementById('registerForm').addEventListener('submit' , function(event){
 event.preventDefault();
-let username = document.getElementById('username').Value;
+let username = document.getElementById('username').value;
 let email = document.getElementById('email').value;
 let password = document.getElementById('password').value;
 let confirmPassword =document.getElementById('confirm-password').value;
 
-if(password === confirmPassword) {
-    SaveUserData(username, email,password);
-    alert('usuario registrado exitosamente. ');
-    window.location.href = 'login.html';
+        if(password === confirmPassword) {
+            SaveUserData(username, email,password);
+            alert('usuario registrado exitosamente. ');
+            window.location.href = 'login.html';
+    }else{
+         alert('Las contraseñas no coinciden. Porfavor,intentelo de nuevo.');
+         }
+    });
+}
 
-}else{
-    alert('Las contraseñas no coinciden. Porfavor,intentelo de nuevo.');
-}
-});
-}
 //codigo para la pagina de inicio de sesion (login.html)
 if (page == 'loginpage') {
     const showPasswordCheckbox = document.getElementById('show-passeord');
@@ -55,25 +54,25 @@ if (page == 'loginpage') {
         if(showPasswordCheckbox.checked ) {
             passwordInput.type = 'text';
         } else {
-            passwordInpur.type = 'password';
+            passwordInput.type = 'password';
         }
+    });
 
-    }
- );}
+    document.getElementById ('loginForms')/addEventListener('submit',function(event){
+        event.proventDefault();
+        let email = this.document.getElementById('email')/value;
+        let password = this.document.getElementById('password').value;
+        let userData = getUserData();
 
+         if(email === userData.email && password === userData.password){
+            alert('inicio de sesion exitoso');
+             window.location;href = 'home.html';
 
-document.getElementById ('loginForms')/addEventListener('submit',function(event){
-    event.proventDefault();
-    let email = this.document.getElementById('email')/value;
-    let password = this.document.getElementById('password').value;
-    let userData = getUserData();
-
-    if(email === userData.email && password === userData.password){
-        this.alert('inicio de sesion exitoso');
-        window.location;href = 'home.html';
-
-    } else {
-        alert('correo electronico o contrseña incorrecos. por favor intentelo de nuevo.');
-
+        } else {
+                alert('correo electronico o contrseña incorrecos. por favor intentelo de nuevo.');
+            }
+        });
     }
 });
+
+
