@@ -47,3 +47,33 @@ if(password === confirmPassword) {
 }
 });
 }
+//codigo para la pagina de inicio de sesion (login.html)
+if (page == 'loginpage') {
+    const showPasswordCheckbox = document.getElementById('show-passeord');
+    const passwordInput = document.getElementById('password');
+    showPasswordCheckbox.addEventListener('change',function() {
+        if(showPasswordCheckbox.checked ) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInpur.type = 'password';
+        }
+
+    }
+ );}
+
+
+document.getElementById ('loginForms')/addEventListener('submit',function(event){
+    event.proventDefault();
+    let email = this.document.getElementById('email')/value;
+    let password = this.document.getElementById('password').value;
+    let userData = getUserData();
+
+    if(email === userData.email && password === userData.password){
+        this.alert('inicio de sesion exitoso');
+        window.location;href = 'home.html';
+
+    } else {
+        alert('correo electronico o contrseña incorrecos. por favor intentelo de nuevo.');
+
+    }
+});
