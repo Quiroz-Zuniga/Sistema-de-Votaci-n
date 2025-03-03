@@ -29,12 +29,12 @@
  }
  h1{
     font-family: 'Nunito';
-    font-size: 22px;
+    font-size: 5vw;
  }
 
  p{
     font-family: 'Nunito';
-    font-size: 18px;
+    font-size: 2vw;
  }
 
  img{
@@ -64,6 +64,7 @@
 .heade_index {
    margin: 20px;
    padding: 10px;
+   text-wrap: wrap;
 }
 
 .h1_index{
@@ -88,9 +89,17 @@
 
 
 /* Login */
+#loginhtml, #loginPage {
+   height: 100%;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   background-color: #f0f0f0;
+}
 
 .main_login{
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
    height: 100%;
@@ -149,7 +158,7 @@
    margin-bottom: 10px;
 }
 
-#mostarcontraseña{
+#mostrarcontraseña{
    max-width:10px ;
 }
 
@@ -159,3 +168,79 @@
 }
 
 /* index */
+#indexPage{
+   background-color: #f0f0f0;
+}
+
+.partidos_derecha, .partidos_izquierda {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   width: 200px;
+   background-color: rgba(0, 0, 0, 0.3);
+   color: white;
+   padding: 20px;
+   box-sizing: border-box;
+   overflow-y: auto;
+   display: flex;
+   flex-direction: column;
+}
+
+.partidos_izquierda {
+   left: 0;
+}
+
+.partidos_derecha {
+   right: 0;
+}
+
+.partidos_izquierda h2, .partidos_derecha h2 {
+   margin-top: 0;
+}
+
+.partidos_izquierda ul, .partidos_derecha ul {
+   list-style-type: none;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+}
+
+.partidos_izquierda ul li, .partidos_derecha ul li {
+   display: flex;
+   align-items: center;
+   margin: 10px 0;
+   display: flex;
+   flex-direction: column;
+}
+
+.partidos_izquierda ul li img, .partidos_derecha ul li img {
+   width: 200px; 
+   height: auto;
+   margin-right: 10px;
+   
+}
+
+.heade_index {
+   text-align: center;
+   color: white;
+   margin-bottom: 20px;
+}
+
+.main_index {
+   text-align: center;
+}
+
+.button_index {
+   background-color: var(--cololrBlueOne);
+   color: var(--colorWhite);
+   padding: 20px 30px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s ease;
+   margin: 10px;
+}
+
+.button_index:hover {
+   background-color: var(--colorBlueTwo);
+}

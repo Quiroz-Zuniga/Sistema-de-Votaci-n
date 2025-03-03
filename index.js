@@ -47,8 +47,8 @@ let confirmPassword =document.getElementById('confirm-password').value;
 }
 
 //codigo para la pagina de inicio de sesion (login.html)
-if (page == 'loginpage') {
-    const showPasswordCheckbox = document.getElementById('show-passeord');
+if (page == 'loginPage') {
+    const showPasswordCheckbox = document.getElementById('mostrarcontraseña');
     const passwordInput = document.getElementById('password');
     showPasswordCheckbox.addEventListener('change',function() {
         if(showPasswordCheckbox.checked ) {
@@ -58,15 +58,15 @@ if (page == 'loginpage') {
         }
     });
 
-    document.getElementById ('loginForms')/addEventListener('submit',function(event){
-        event.proventDefault();
-        let email = this.document.getElementById('email')/value;
-        let password = this.document.getElementById('password').value;
+    document.getElementById ('loginForm').addEventListener('submit',function(event){
+        event.preventDefault();
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
         let userData = getUserData();
 
          if(email === userData.email && password === userData.password){
             alert('inicio de sesion exitoso');
-             window.location;href = 'home.html';
+             window.location.href = 'voto.html';
 
         } else {
                 alert('correo electronico o contrseña incorrecos. por favor intentelo de nuevo.');
