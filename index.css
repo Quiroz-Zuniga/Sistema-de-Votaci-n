@@ -306,3 +306,44 @@
    background-color: var(--colorBlueTwo);
 }
 
+/* Carrusel */
+
+.carrusel {
+   position: relative;
+   width: 80%;
+   margin: auto;
+   overflow: hidden;
+}
+
+.carrusel_contenedor {
+   display: flex;
+   transition: transform o.5s ease-in-out;
+}
+
+.carrusel-item {
+   min-width: 100%;
+   box-sizing: border-box;
+}
+
+.carrusel-item img {
+   width: 80%;
+}
+
+button.antes, button.sigue {
+   position: absolute;
+   top: 50%;
+   transform: translate(-50%);
+   background-color: rgba(0, 0, 0, 0.5);
+   color: white;
+   border: none;
+   padding: 10px;
+   cursor: pointer;
+}
+
+button.antes {
+   left: 80px;
+}
+
+button.sigue {
+   right: 0px;
+}

@@ -7,20 +7,6 @@
     <title>Página de inicio</title>
 </head>
 <body id="indexPage">
-    <div class="partidos_derecha">
-        <h2>Partidos Políticos</h2>
-        <ul>
-            <li><img src="/Imagenes/PartidoNacional.png" alt="Partido Nacional"> Partido Nacional</li>
-            <li><img src="/Imagenes/SalvadorPartido.jpg" alt="Partido Salvador deHonduras"> Partido Salvador de Honduras</li>
-        </ul>
-    </div>
-    <div class="partidos_izquierda">
-        <h2>Partidos Políticos</h2>
-        <ul>
-            <li><img src="/Imagenes/partidoLiberal.svg" alt="Partido Liberal" > Partido Liberal</li>
-            <li><img src="/Imagenes/Libertad.png" alt="Partido Libre" > Partido Libre</li>
-        </ul>
-    </div>
     <heade class="heade_index">
         <h1 class="h1_index">
             Sistema de Votación
@@ -33,7 +19,24 @@
     <main class="main_index">
         <button  class="button_index" id="registerButton" >Registrarse</button>
         <button class="button_index" id="loginButton" >Iniciar Sesión</button>
+
+        <div class="carrusel">
+            <div class="carrusel_contenedor">
+                <div class="carrusel-item active"><img src="/Imagenes/partidoLiberal.svg" alt="partidoLiberal">
+                </div>
+                <div class="carrusel-item"><img src="/Imagenes/Libertad.png" alt="Libertad">
+                </div>
+                <div class="carrusel-item"><img src="/Imagenes/PartidoNacional.png" alt="PartidoNacional">
+                </div>
+                <div class="carrusel-item"><img src="/Imagenes/SalvadorPartido.jpg" alt="SalvadorPartido">
+                </div>
+            </div>
+            <button class="antes" >Anterior</button>
+            <button class="sigue" >Siguiente</button>
+        </div>
+
     </main>
+
     <script src="index.js"></script>
 </body>
 </html>

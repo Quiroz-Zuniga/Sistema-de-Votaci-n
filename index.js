@@ -13,6 +13,28 @@ function getUserData() {
 }         
 //Ejecutar cuando el DOM este completamente cargado
 document.addEventListener('DOMContentLoaded' , function() {
+
+    const carrusel = document.querySelector('.carrusel_contenedor');
+    const item =  document.querySelectorAll('.carrusel-item');
+    const antesBtn = document.querySelector('.antes');
+    const sigueBtn = document.querySelector('.sigue')
+    let currentIndex = 0;
+    
+    function updateCarrrusel() {
+        const offset = -carrusel * 100;
+        carrusel.style.transform = `translateX(${offset}%`
+    }
+
+    sigueBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : item.length - 1;
+
+    });
+
+    sigueBtn.addEventListener('click', function () {
+        currentIndex = (currentIndex < item.length - 1) ? currentIndex + 1 : 0;
+        updateCarrrusel();
+    });
+
     //Identificar la pagina actual
     const page = document.body.id;
 
@@ -74,5 +96,6 @@ if (page == 'loginPage') {
         });
     }
 });
+
 
 
