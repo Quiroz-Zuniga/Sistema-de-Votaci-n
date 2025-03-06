@@ -246,16 +246,25 @@
 }
 
 /* registro */
+#resgisterPage {
+   height: 100%;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   background-color:#f0f0f0;
+}
 .header_register {
    margin: 20px;
    padding: 10px;
    text-align: center;
-   color: white;
+   color: var(--colorThree);
 }
 
 .h1_register {
-   margin: 20px;
-   padding: 10px;
+   margin: 25px;
+   padding: 15px;
+   font-family: 'Nunito';
+   font-size: 5vw;
 }
 
 .main_register {
@@ -272,14 +281,15 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding: 20px;
+   padding: 30px;
    border-radius: 10px;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .form_register input {
-   margin-bottom: 10px;
+   margin-top: 15px;
+   margin-bottom: 15px;
    padding: 10px;
    width: 250px;
    border: 1px solid #ccc;
