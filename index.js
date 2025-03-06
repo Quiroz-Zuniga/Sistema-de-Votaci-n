@@ -95,6 +95,29 @@ if (page == 'loginPage') {
             }
         });
     }
+    // Codigo voto//
+    const form = document.getElementById('VoteForm');
+
+        //Llamamos el evento form//
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+           //Constante para la variable Candidato seleccionado//
+            const candidatoSeleccionado = document.querySelector('input[name="candidate"]:checked');
+
+            //Condiciones//
+            if (candidatoSeleccionado) {
+                
+                alert(`Has votado por: ${candidatoSeleccionado.value}`);
+
+                
+                localStorage.setItem('voto', candidatoSeleccionado.value);
+
+                
+                window.location.href = 'resultado.html';
+            } else {
+                alert('Por favor, selecciona un candidato antes de votar.');
+            }
+        });
 });
 
 

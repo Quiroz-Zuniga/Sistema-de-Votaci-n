@@ -347,3 +347,42 @@ button.antes {
 button.sigue {
    right: 0px;
 }
+
+/* Voto*/
+.main_voto{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 20px;
+  } 
+  .form_votos{
+   background: white;
+   padding: 20px;
+   border-radius: 12px;
+   box-shadow: 0 4px 8px rgba(0,0,0.1);
+}
+
+.candidate {
+   margin-bottom: 20px;
+}
+
+.candidate img{
+width: 150px;
+height: auto;
+border-radius: 10px;
+display: block;
+margin-bottom: 8px;
+}
+.bntVoto {
+background-color:#264653;
+color:white;
+padding: 10px 20px;
+font-size: 16px;
+border-radius: 8px;
+cursor: pointer;
+transition: background 0.3s;
+
+}
+.btnVoto :hover {
+background-color:31b3647;
+}

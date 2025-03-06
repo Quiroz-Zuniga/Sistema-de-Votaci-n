@@ -6,63 +6,7 @@
     <link rel="stylesheet" href="/index.css">
     <script src="/index.js"></script>
     <title>Votos</title>
-    <style>
-        body {
-            font-family: Arial,sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color:#f0f0f0; 
-            color: #4cc4e6;
-        }
-        header { 
-            text-align: center;
-            padding: 1 rem;
-            background-color: #2a9d8f;
-            color: white;
-        }
-
-        .h1_voto {
-            margin: 0;
-         }
-           .main_voto{
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-           } 
-           .form_votos{
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0.1);
-        }
-
-         .candidate {
-            margin-bottom: 20px;
-        }
-
-        .candidate img{
-        width: 150px;
-        height: auto;
-        border-radius: 10px;
-        display: block;
-        margin-bottom: 8px;
-    }
-    buttom{
-        background-color:#264653;
-        color:white;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background 0.3s;
     
-    }
-    buttom :hover {
-       background-color:31b3647;
-    }
-    </style>
 </head>
 <body id="VotoPage">
 <header>
@@ -99,44 +43,10 @@
                 Salvador Nasralla 
                 </label>
                 </div>
-                <button type="submit">Votar</button>
+                <button class="btnVoto" type="submit">Votar</button>
          </form>
         </main>
 
-<script>
-    
-    document.addEventListener('DOMContentLoaded', function() {
-
-        
-        const form = document.getElementById('VoteForm');
-
-        
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-           
-            const candidatoSeleccionado = document.querySelector('input[name="candidate"]:checked');
-
-            
-            if (candidatoSeleccionado) {
-                
-                alert('Has votado por: ${candidatoSeleccionado.value}');
-
-                
-                localStorage.setItem('voto', candidatoSeleccionado.value);
-
-                
-                window.location.href = 'resultado.html';
-            } else {
-                alert('Por favor, selecciona un candidato antes de votar.');
-            }
-        });
-
-    });
-</script>
-
-</body>
-
-</html>
-        
+     
     </body>
 </html>
