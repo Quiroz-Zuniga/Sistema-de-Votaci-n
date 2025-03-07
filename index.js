@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded' , function() {
         carrusel.style.transform = `translateX(${offset}%`
     }
 
-    sigueBtn.addEventListener('click', function() {
+    antesBtn.addEventListener('click', function() {
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : item.length - 1;
 
     });
@@ -96,9 +96,9 @@ if (page == 'loginPage') {
         });
     }
     // Codigo voto//
-    const form = document.getElementById('VoteForm');
-
+    const form = document.getElementsByClassName('.form_voto');
         //Llamamos el evento form//
+        
         form.addEventListener('submit', function(event) {
             event.preventDefault(); 
            //Constante para la variable Candidato seleccionado//
