@@ -675,3 +675,219 @@ background-color:31b3647;
 }
 
 /* dark mode */
+/* === Estilos generales === */
+body {
+   font-family: Arial, sans-serif; /* Fuente general */
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; /* Evita desbordamientos */
+   background-color: #ffffff; /* Fondo claro por defecto */
+   color: #000000; /* Texto oscuro por defecto */
+   transition: background-color 0.5s, color 0.5s; /* Transición suave */
+}
+
+
+/* === Barra de navegación === */
+.navbar {
+   display: flex; /* Usa flexbox */
+   align-items: center; /* Centrar verticalmente */
+   justify-content: flex-end; /* Alinea a la derecha */
+   gap: 15px; /* Espacio entre elementos */
+   padding: 15px;
+   background: #f0f0f0; /* Fondo de la navbar */
+   border-bottom: 2px solid #ccc; /* Línea inferior */
+}
+
+/* === Botones de "Registrarse" e "Iniciar sesión" === */
+.btn {
+   padding: 8px 15px;
+   border: none;
+   border-radius: 20px;
+   cursor: pointer;
+   background-color: #0047FF; /* Azul */
+   color: white;
+   font-size: 14px;
+}
+
+/* === Botón deslizante (modo claro/oscuro) === */
+.toggle-container {
+   display: flex; /* Usa flexbox */
+   align-items: center; /* Centra verticalmente */
+   cursor: pointer; /* Cursor en forma de mano */
+   position: relative; /* Necesario para posicionar el slider */
+   width: 60px; /* Ancho del botón */
+   height: 30px; /* Altura del botón */
+   border-radius: 20px; /* Bordes redondeados */
+   background: #ddd; /* Fondo claro por defecto */
+   transition: background 0.5s; /* Animación suave */
+}
+
+/* === Icono de Sol o Luna === */
+.icon {
+   width: 24px; /* Tamaño del icono */
+   height: 24px;
+   z-index: 2; /* Lo mantiene por encima del slider */
+   margin-left: 5px; /* Espaciado */
+}
+
+/* === Deslizador animado === */
+.slider {
+   position: absolute;
+   left: 5px; /* Posición inicial */
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   background: white; /* Color del deslizador */
+   transition: left 0.5s; /* Animación del movimiento */
+}
+
+/* === Estilos del contenido === */
+main {
+   padding: 20px;
+}
+
+/* === Tarjetas de contenido === */
+.card {
+   margin-top: 20px;
+   padding: 20px;
+   border-radius: 12px;
+   background-color: #f9f9f9; /* Fondo claro */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* === Footer === */
+footer {
+   text-align: center;
+   padding: 10px;
+   background: #f0f0f0;
+}
+
+/* === 🌙 Modo Oscuro === */
+body.dark-mode {
+   background-color: #121212; /* Fondo oscuro */
+   color: #ffffff; /* Texto claro */
+}
+
+/* Navbar en modo oscuro */
+body.dark-mode .navbar {
+   background: #1e1e1e;
+   border-bottom: 2px solid #444;
+}
+
+/* Slider en modo oscuro */
+body.dark-mode .slider {
+   left: 30px; /* Mueve el deslizador a la derecha */
+}
+
+/* Fondo del toggle en modo oscuro */
+body.dark-mode .toggle-container {
+   background: #444;
+}
+
+/* Tarjetas en modo oscuro */
+body.dark-mode .card {
+   background-color: #242424;
+   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Footer en modo oscuro */
+body.dark-mode footer {
+   background: #1e1e1e;
+}
+
+/* === Botones de "Registrarse" e "Iniciar sesión" === */
+.btn {
+   padding: 8px 15px;
+   border: none;
+   border-radius: 20px;
+   cursor: pointer;
+   background-color: #0047FF; /* Azul */
+   color: white;
+   font-size: 14px;
+}
+
+/* === Botón deslizante (modo claro/oscuro) === */
+.toggle-container {
+   display: flex; /* Usa flexbox */
+   align-items: center; /* Centra verticalmente */
+   cursor: pointer; /* Cursor en forma de mano */
+   position: relative; /* Necesario para posicionar el slider */
+   width: 60px; /* Ancho del botón */
+   height: 30px; /* Altura del botón */
+   border-radius: 20px; /* Bordes redondeados */
+   background: #ddd; /* Fondo claro por defecto */
+   transition: background 0.5s; /* Animación suave */
+}
+
+/* === Icono de Sol o Luna === */
+.icon {
+   width: 24px; /* Tamaño del icono */
+   height: 24px;
+   z-index: 2; /* Lo mantiene por encima del slider */
+   margin-left: 5px; /* Espaciado */
+}
+
+/* === Deslizador animado === */
+.slider {
+   position: absolute;
+   left: 5px; /* Posición inicial */
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   background: white; /* Color del deslizador */
+   transition: left 0.5s; /* Animación del movimiento */
+}
+
+/* === Estilos del contenido === */
+main {
+   padding: 20px;
+}
+
+/* === Tarjetas de contenido === */
+.card {
+   margin-top: 20px;
+   padding: 20px;
+   border-radius: 12px;
+   background-color: #f9f9f9; /* Fondo claro */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* === Footer === */
+footer {
+   text-align: center;
+   padding: 10px;
+   background: #f0f0f0;
+}
+
+/* === 🌙 Modo Oscuro === */
+body.dark-mode {
+   background-color: #121212; /* Fondo oscuro */
+   color: #ffffff; /* Texto claro */
+}
+
+/* Navbar en modo oscuro */
+body.dark-mode .navbar {
+   background: #1e1e1e;
+   border-bottom: 2px solid #444;
+}
+
+/* Slider en modo oscuro */
+body.dark-mode .slider {
+   left: 30px; /* Mueve el deslizador a la derecha */
+}
+
+/* Fondo del toggle en modo oscuro */
+body.dark-mode .toggle-container {
+   background: #444;
+}
+
+/* Tarjetas en modo oscuro */
+body.dark-mode .card {
+   background-color: #242424;
+   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Footer en modo oscuro */
+body.dark-mode footer {
+   background: #1e1e1e;
+}

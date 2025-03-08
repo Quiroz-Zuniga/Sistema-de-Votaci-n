@@ -175,5 +175,43 @@ function handleSmallScreens() {
 }
 
 handleSmallScreens();
+// Seleccionar los elementos HTML relevantes
+const toggleMode = document.getElementById('toggleMode');
+const modeIcon = document.getElementById('modeIcon');
 
+// eta es la función para alternar entre modo claro y oscuro
+const toggleDarkMode = () => {
+    
+    document.body.classList.toggle('dark-mode');
+
+    // Verifica si el modo oscuro está activado
+    const isDarkMode = document.body.classList.contains('dark-mode');
+
+    // Cambiar el ícono del botón (sol o luna)
+    if (isDarkMode) {
+        modeIcon.src = 'imagenes/sol.png'; // Imagen del sol (modo claro)
+        modeIcon.alt = 'Modo Claro';
+    } else {
+        modeIcon.src = 'imagenes/luna.png'; // Imagen de la luna (modo oscuro)
+        modeIcon.alt = 'Modo Oscuro';
+    }
+
+    // Guardar la preferencia en localStorage
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+};
+
+// Escuchar el evento de clic en el botón
+toggleMode.addEventListener('click', toggleDarkMode);
+
+// Mantener el modo seleccionado al recargar la página
+window.addEventListener('DOMContentLoaded', () => {
+    const savedMode = localStorage.getItem('darkMode');
+
+    // Si el usuario tenía activado el modo oscuro, aplicarlo
+    if (savedMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+        modeIcon.src = 'img/sol.png'; // Ajustar el ícono
+        modeIcon.alt = 'Modo Claro';
+    }
+});
 
