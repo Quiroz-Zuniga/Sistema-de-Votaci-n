@@ -1,39 +1,51 @@
-function SaveUserData (username,email, password){
-    localStorage.setItem('Username' ,username );
-    localStorage.setItem( 'email' , email );
-    localStorage.setItem('password' , password);
-}
+function SaveUserData (username, email, password){
+  //  obtener usuarios
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+ 
 
-function getUserData() {
-    return{
-        username: localStorage.getItem('username'),
-        email: localStorage.getItem( 'email'),
-        password: localStorage.getItem('password')
-    };
-}         
+  // Nuevo Usuario
+  let newUsers = {
+    username: username,
+    email: email,
+    password: password
+  };  
+
+  users.push(newUsers);
+  // guardar en localstore
+
+  localStorage.setItem('users', JSON.stringify(users))
+  console.log("Usuario guardado: ", users);
+}  
+  // función para el getUserData
+  function getUserData() {
+    return JSON.parse(localStorage.getItem('users')) || [];
+ 
+    
+  }
+
 //Ejecutar cuando el DOM este completamente cargado
 document.addEventListener('DOMContentLoaded' , function() {
 
-    const carrusel = document.querySelector('.carrusel_contenedor');
-    const item =  document.querySelectorAll('.carrusel-item');
-    const antesBtn = document.querySelector('.antes');
-    const sigueBtn = document.querySelector('.sigue')
-    let currentIndex = 0;
+    // const carrusel = document.querySelector('.carrusel_contenedor');
+    // const item =  document.querySelectorAll('.carrusel-item');
+    // const antesBtn = document.querySelector('.antes');
+    // const sigueBtn = document.querySelector('.sigue')
+    // let currentIndex = 0;
     
-    function updateCarrrusel() {
-        const offset = -carrusel * 100;
-        carrusel.style.transform = `translateX(${offset}%`
-    }
+    // function updateCarrrusel() {
+    //     const offset = -carrusel * 100;
+    //     carrusel.style.transform = `translateX(${offset}%`
+    // }
 
-    antesBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : item.length - 1;
+    // antesBtn.addEventListener('click', function() {
+    //     currentIndex = (currentIndex > 0) ? currentIndex - 1 : item.length - 1;
 
-    });
+    // });
 
-    sigueBtn.addEventListener('click', function () {
-        currentIndex = (currentIndex < item.length - 1) ? currentIndex + 1 : 0;
-        updateCarrrusel();
-    });
+    // sigueBtn.addEventListener('click', function () {
+    //     currentIndex = (currentIndex < item.length - 1) ? currentIndex + 1 : 0;
+    //     updateCarrrusel();
+
 
     //Identificar la pagina actual
     const page = document.body.id;
@@ -50,15 +62,15 @@ document.addEventListener('DOMContentLoaded' , function() {
         });
     }
 // codigo para la pagina de registro (register.html)
-if (page ==='registerPage') {
-document.getElementById('registerForm').addEventListener('submit' , function(event){
-event.preventDefault();
-let username = document.getElementById('username').value;
-let email = document.getElementById('email').value;
-let password = document.getElementById('password').value;
-let confirmPassword =document.getElementById('confirm-password').value;
+  if (page ==='registerPage') {
+    document.getElementById('registerForm').addEventListener('submit' , function(event){
+    event.preventDefault();
+        let username = document.getElementById('username').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        let confirmPassword =document.getElementById('confirm-password').value;
 
-        if(password === confirmPassword) {
+    if(password === confirmPassword) {
             SaveUserData(username, email,password);
             alert('usuario registrado exitosamente. ');
             window.location.href = 'login.html';
@@ -82,44 +94,49 @@ if (page == 'loginPage') {
 
     document.getElementById ('loginForm').addEventListener('submit',function(event){
         event.preventDefault();
+
         let email = document.getElementById('email').value;
         let password = document.getElementById('password').value;
-        let userData = getUserData();
-
-         if(email === userData.email && password === userData.password){
-            alert('inicio de sesion exitoso');
-             window.location.href = 'voto.html';
-
+    
+        // Obtener todos los usuarios
+        let users = getUserData();
+    
+        // Buscar un usuario que coincida con el correo y la contraseña
+        let user = users.find(u => u.email === email && u.password === password);
+    
+        if (user) {
+            alert('Inicio de sesión exitoso');
+            window.location.href = 'voto.html';
         } else {
-                alert('correo electronico o contrseña incorrecos. por favor intentelo de nuevo.');
-            }
+            alert('Correo electrónico o contraseña incorrectos. Por favor, inténtelo de nuevo.');
+        }
         });
     }
-    // Codigo voto//
-    const form = document.getElementsByClassName('.form_voto');
-        //Llamamos el evento form//
+//     // Codigo voto//
+//     const form = document.getElementsByClassName('.form_voto');
+//         //Llamamos el evento form//
         
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-           //Constante para la variable Candidato seleccionado//
-            const candidatoSeleccionado = document.querySelector('input[name="candidate"]:checked');
+//         form.addEventListener('submit', function(event) {
+//             event.preventDefault(); 
+//            //Constante para la variable Candidato seleccionado//
+//             const candidatoSeleccionado = document.querySelector('input[name="candidate"]:checked');
 
-            //Condiciones//
-            if (candidatoSeleccionado) {
+//             //Condiciones//
+//             if (candidatoSeleccionado) {
                 
-                alert(`Has votado por: ${candidatoSeleccionado.value}`);
-
-                
-                localStorage.setItem('voto', candidatoSeleccionado.value);
+//                 alert(`Has votado por: ${candidatoSeleccionado.value}`);
 
                 
-                window.location.href = 'resultado.html';
-            } else {
-                alert('Por favor, selecciona un candidato antes de votar.');
-            }
-        });
+//                 localStorage.setItem('voto', candidatoSeleccionado.value);
+
+                
+//                 window.location.href = 'resultado.html';
+//             } else {
+//                 alert('Por favor, selecciona un candidato antes de votar.');
+//             }
+//         });
+// });
 });
-
 
 
 // Código para el nav-bar
@@ -174,44 +191,45 @@ function handleSmallScreens() {
   });
 }
 
-handleSmallScreens();
-// Seleccionar los elementos HTML relevantes
-const toggleMode = document.getElementById('toggleMode');
-const modeIcon = document.getElementById('modeIcon');
+// handleSmallScreens();
+// // Seleccionar los elementos HTML relevantes
+// const toggleMode = document.getElementById('toggleMode');
+// const modeIcon = document.getElementById('modeIcon');
 
-// eta es la función para alternar entre modo claro y oscuro
-const toggleDarkMode = () => {
+// // eta es la función para alternar entre modo claro y oscuro
+// const toggleDarkMode = () => {
     
-    document.body.classList.toggle('dark-mode');
+//     document.body.classList.toggle('dark-mode');
 
-    // Verifica si el modo oscuro está activado
-    const isDarkMode = document.body.classList.contains('dark-mode');
+//     // Verifica si el modo oscuro está activado
+//     const isDarkMode = document.body.classList.contains('dark-mode');
 
-    // Cambiar el ícono del botón (sol o luna)
-    if (isDarkMode) {
-        modeIcon.src = 'imagenes/sol.png'; // Imagen del sol (modo claro)
-        modeIcon.alt = 'Modo Claro';
-    } else {
-        modeIcon.src = 'imagenes/luna.png'; // Imagen de la luna (modo oscuro)
-        modeIcon.alt = 'Modo Oscuro';
-    }
+//     // Cambiar el ícono del botón (sol o luna)
+//     if (isDarkMode) {
+//         modeIcon.src = 'imagenes/sol.png'; // Imagen del sol (modo claro)
+//         modeIcon.alt = 'Modo Claro';
+//     } else {
+//         modeIcon.src = 'imagenes/luna.png'; // Imagen de la luna (modo oscuro)
+//         modeIcon.alt = 'Modo Oscuro';
+//     }
 
-    // Guardar la preferencia en localStorage
-    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-};
+//     // Guardar la preferencia en localStorage
+//     localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+// };
 
-// Escuchar el evento de clic en el botón
-toggleMode.addEventListener('click', toggleDarkMode);
+// // Escuchar el evento de clic en el botón
+// toggleMode.addEventListener('click', toggleDarkMode);
 
-// Mantener el modo seleccionado al recargar la página
-window.addEventListener('DOMContentLoaded', () => {
-    const savedMode = localStorage.getItem('darkMode');
+// // Mantener el modo seleccionado al recargar la página
+// window.addEventListener('DOMContentLoaded', () => {
+//     const savedMode = localStorage.getItem('darkMode');
 
-    // Si el usuario tenía activado el modo oscuro, aplicarlo
-    if (savedMode === 'enabled') {
-        document.body.classList.add('dark-mode');
-        modeIcon.src = 'img/sol.png'; // Ajustar el ícono
-        modeIcon.alt = 'Modo Claro';
-    }
-});
+//     // Si el usuario tenía activado el modo oscuro, aplicarlo
+//     if (savedMode === 'enabled') {
+//         document.body.classList.add('dark-mode');
+//         modeIcon.src = 'img/sol.png'; // Ajustar el ícono
+//         modeIcon.alt = 'Modo Claro';
+//     }
+// });
+
 
