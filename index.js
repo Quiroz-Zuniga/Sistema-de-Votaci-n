@@ -178,7 +178,7 @@ handleSmallScreens();
 // Seleccionar los elementos HTML relevantes
 const toggleMode = document.getElementById('toggleMode');
 const modeIcon = document.getElementById('modeIcon');
-
+const body = document.body;
 // eta es la función para alternar entre modo claro y oscuro
 const toggleDarkMode = () => {
     
