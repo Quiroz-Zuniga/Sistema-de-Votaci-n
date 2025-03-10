@@ -26,29 +26,33 @@
             </div>
         </div>
     </nav>  
-       <header>
-       <h1> Resultados de la Votación</h1>
-       </header>   
-       <main>
+    <header>
+        <h1>Resultados de la Votación</h1>
+    </header>   
+    <main>
         <table id="resultsTable">
-         <tr>
-             <th>Opción</th> 
-             <th>Votos</th>
-          </tr>
-          <tr>
-             <td>Opción 1</td> 
-             <td id="votesOpcion1">0</td>
-             </tr>
-             <tr>
-                 <td>Opción 3</td> 
-                 <td id="votesOpcion2">0</td> 
-             </tr> 
-             <tr>
-                 <td>Opción 3</td>
-                 <td id="votesOpcion3">0</td>
-             </tr>
-          </table>
-     </main>
-     <script src="/index.js"></script>
+            <tr>
+                <th>Opción</th> 
+                <th>Votos</th>
+                <th>Resultados</th>
+            </tr>
+            <tr>
+                <td>Opción 1</td> 
+                <td id="votesOpcion1">0</td>
+                <td><div class="result-bar" id="barOpcion1"></div></td>
+            </tr>
+            <tr>
+                <td>Opción 2</td> 
+                <td id="votesOpcion2">0</td>
+                <td><div class="result-bar" id="barOpcion2"></div></td>
+            </tr>
+            <tr>
+                <td>Opción 3</td>
+                <td id="votesOpcion3">0</td>
+                <td><div class="result-bar" id="barOpcion3"></div></td>
+            </tr>
+        </table>
+    </main>
+    <script src="/index.js"></script>
 </body> 
 </html>
