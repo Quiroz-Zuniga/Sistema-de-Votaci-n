@@ -671,34 +671,36 @@ transition: background 0.3s;
 
 }
 .btnVoto :hover {
-background-color:31b3647;
+background-color: #31b364;
 }
 /*resultado_barras*/
 #resultsTable {
-   height: 100px;
-   background-color:var(--colorWhite);
-   width: 0%; /*Ancho inicial de barra*/
-   transition: windth 0.5s;
-   display:flex;
-   flex-direction: column;
-   gap:20px;
+   height: 300px;
+   width: 100%; /*Ancho inicial de barra*/
+   border-collapse: collapse;
+
 }
-#resultsTable > tr{
+th, td{
    padding: 10px;
-   margin-bottom: 10px;
-   margin-top: 10px;
-}
-#votesOpcion1{
-   background-color: #4CAF50;
-  
-   
+   text-align: center;
+   border:  1px solid #ddd;
 }
 
-#votesOpcion2{
+.result-bar {
+   height: 20px;
+   width: 10%;
+   transition: width 0.5s;
+   background-color: #ccc;
+}
+#barOpcion1 {
+   background-color: #4CAF50; 
+}
+
+#barOpcion2 {
    background-color: #2196F3;
 }
 
-#votesOpcion3{
+#barOpcion3 {
    background-color: #F44336;
 }
 
