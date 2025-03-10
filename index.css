@@ -224,6 +224,7 @@
 }
 
 
+
 /* Nav */
 a {
    text-decoration: none;
@@ -248,7 +249,7 @@ a {
    display: flex;
    flex-wrap: wrap;
    align-items: center;
-   justify-content: space-between;
+   justify-content: space-evenly;
    color: var(--colorThree);
 }
 
@@ -339,7 +340,7 @@ a {
 .navbar .navbar-header > a {
    font-weight: 500;
    color: var(--colorThree);
-   padding-right: 50px;
+   padding-right: 30px;
 }
 
 .navbar .navbar-menu {
@@ -713,84 +714,75 @@ th, td{
 
 /* dark mode */
 
-.body {
-   font-family: Arial, sans-serif; /* Fuente general */
+/* .body {
+   font-family: Arial, sans-serif; 
    margin: 0;
    padding: 0;
-   box-sizing: border-box; /* Evita desbordamientos */
-   background-color: #ffffff; /* Fondo claro por defecto */
-   color: #000000; /* Texto oscuro por defecto */
-   transition: background-color 0.5s, color 0.5s; /* Transición suave */
-}
+   box-sizing: border-box; 
+   background-color: #ffffff; 
+   color: #000000; 
+   transition: background-color 0.5s, color 0.5s; 
+} */
 
 
 /* === Barra de navegación === */
-.navbar {
-   display: flex; /* Usa flexbox */
-   align-items: center; /* Centrar verticalmente */
-   justify-content: flex-end; /* Alinea a la derecha */
-   gap: 15px; /* Espacio entre elementos */
+/* .navbar {
+   display: flex; 
+   align-items: center; 
+   justify-content: flex-end; 
+   gap: 15px; 
    padding: 15px;
-   background: #f0f0f0; /* Fondo de la navbar */
-   border-bottom: 2px solid #ccc; /* Línea inferior */
-}
+   background: #f0f0f0; 
+   border-bottom: 2px solid #ccc; 
+} */
 
 /* === Botones de "Registrarse" e "Iniciar sesión" === */
-.btn {
+/* .btn {
    padding: 8px 15px;
    border: none;
    border-radius: 20px;
    cursor: pointer;
-   background-color: #0047FF; /* Azul */
+   background-color: #0047FF; 
    color: white;
    font-size: 14px;
-}
+} */
 
 /* === Botón deslizante (modo claro/oscuro) === */
-.toggle-container {
-   display: flex; /* Usa flexbox */
-   align-items: center; /* Centra verticalmente */
-   cursor: pointer; /* Cursor en forma de mano */
-   position: relative; /* Necesario para posicionar el slider */
-   width: 60px; /* Ancho del botón */
-   height: 30px; /* Altura del botón */
-   border-radius: 20px; /* Bordes redondeados */
-   background: #f3f4f5; /* Fondo claro por defecto */
-   transition: background 0.5s; /* Animación suave */
-}
+/* .toggle-container {
+   display: flex; 
+   align-items: center; 
+   cursor: pointer; 
+   position: relative; 
+   width: 60px; 
+   height: 30px; 
+   border-radius: 20px; 
+   background: #f3f4f5; 
+   transition: background 0.5s; 
+} */
 
 /* === Icono de Sol o Luna === */
-.icon {
-   width: 24px; /* Tamaño del icono */
+/* .icon {
+   width: 24px; 
    height: 24px;
-   z-index: 2; /* Lo mantiene por encima del slider */
-   margin-left: 5px; /* Espaciado */
-}
+   z-index: 2; 
+   margin-left: 5px; 
+} */
 
 /* === Deslizador animado === */
-.slider {
+/* .slider {
    position: absolute;
-   left: 5px; /* Posición inicial */
+   left: 5px; 
    width: 24px;
    height: 24px;
    border-radius: 50%;
-   background: rgb(54, 225, 255); /* Color del deslizador */
-   transition: left 0.5s; /* Animación del movimiento */
-}
+   background: rgb(54, 225, 255); 
+   transition: left 0.5s; 
+} */
 
 /* === Estilos del contenido === */
-main {
+/* main {
    padding: 20px;
-}
-
-/* Tarjetas de contenido  */
-.card {
-   margin-top: 20px;
-   padding: 20px;
-   border-radius: 12px;
-   background-color: #f9f9f9; /* Fondo claro */
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-}
+} */
 
 /* === Footer === */
 footer {
@@ -801,8 +793,8 @@ footer {
 
 /*  Modo Oscuro  */
 body.dark-mode {
-   background-color: #121212; /* Fondo oscuro */
-   color: #ffffff; /* Texto claro */
+   background-color: #121212; 
+   color: #ffffff; 
 }
 
 /* Navbar en modo oscuro */
@@ -813,7 +805,7 @@ body.dark-mode .navbar {
 
 /* Slider en modo oscuro */
 body.dark-mode .slider {
-   left: 30px; /* Mueve el deslizador a la derecha */
+   left: 30px; 
 }
 
 /* Fondo del toggle en modo oscuro */
@@ -833,60 +825,82 @@ body.dark-mode footer {
 }
 
 /* Botones de "Registrarse" e "Iniciar sesión" */
-.btn {
+/* .btn {
    padding: 8px 15px;
    border: none;
    border-radius: 20px;
    cursor: pointer;
-   background-color: #0047FF; /* Azul */
+   background-color: #0047FF;
    color: white;
    font-size: 14px;
-}
+} */
 
 /* Botón deslizante modo claro/oscuro*/
 .toggle-container {
-   display: flex; /* Usa flexbox */
-   align-items: center; /* Centra verticalmente */
-   cursor: pointer; /* Cursor en forma de mano */
-   position: relative; /* Necesario para posicionar el slider */
-   width: 60px; /* Ancho del botón */
-   height: 30px; /* Altura del botón */
-   border-radius: 20px; /* Bordes redondeados */
-   background: #3500f6; /* Fondo claro por defecto */
-   transition: background 0.5s; /* Animación suave */
+   display: flex; 
+   align-items: center; 
+   cursor: pointer; 
+   position: relative; 
+   width: 60px; 
+   height: 30px; 
+   border-radius: 20px; 
+   background: #3500f6; 
+   transition: background 0.5s; 
 }
 
 /* Icono de Sol o Luna  */
-.icon {
-   width: 24px; /* Tamaño del icono */
+/* .icon {
+   width: 24px; 
    height: 24px;
-   z-index: 2; /* Lo mantiene por encima del slider */
-   margin-left: 5px; /* Espaciado */
-}
+   z-index: 2; 
+   margin-left: 5px; 
+} */
 
 /* Deslizador animado */
 .slider {
    position: absolute;
-   left: 5px; /* Posición inicial */
+   left: 5px; 
    width: 24px;
    height: 24px;
    border-radius: 50%;
-   background: white; /* Color del deslizador */
-   transition: left 0.5s; /* Animación del movimiento */
+   background: white; 
+   transition: left 0.5s; 
 }
 
 /* === Estilos del contenido === */
-main {
+/* main {
    padding: 20px;
-}
+} */
 
 /* === Tarjetas de contenido === */
 .card {
-   margin-top: 20px;
+   font-family: 'Nunito';
+   margin-top: 80px;
+   margin-bottom: 50px;
+   width: 35vw;
    padding: 20px;
    border-radius: 12px;
-   background-color: #f9f9f9; /* Fondo claro */
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+   background-color: #f9f9f9; 
+   color: var(--colorThree);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.card > ul{
+   padding-top: 20px;
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   
+}
+
+.card > h5 {
+   font-size: 1.5rem;
+   color: var(--colorBlueTwo);
+}
+
+.card > ul > li {
+   padding: 10px;
 }
 
 /* === Footer === */
