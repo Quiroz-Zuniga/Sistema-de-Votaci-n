@@ -682,7 +682,7 @@ background-color: #31b364;
 }
 th, td{
    padding: 10px;
-   text-align: center;
+   text-align: left;
    border:  1px solid #ddd;
 }
 
@@ -693,15 +693,19 @@ th, td{
    background-color: #ccc;
 }
 #barOpcion1 {
-   background-color: #4CAF50; 
+   background-color: #73c8e5; 
 }
 
 #barOpcion2 {
-   background-color: #2196F3;
+   background-color: #160f9c;
 }
 
 #barOpcion3 {
-   background-color: #F44336;
+   background-color: #1341cb;
+}
+
+#barOpcion4 {
+   background-color: #df380f;
 }
 
 
