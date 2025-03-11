@@ -6,30 +6,26 @@
     <link rel="stylesheet" href="index.css">
     <title>Página de inicio</title>
 </head>
-<body id="indexPage">
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header">
+<body id="indexPage" class="dark-mode">
+    <nav class="navbar dark-mode">
+        <div class="container dark-mode">
+            <div class="navbar-header dark-mode">
                 <button class="navbar-toggler" data-toggle="open-navbar1">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <h4>Elecciones<span>2025</span></h4>
+                <h4 class="dark-mode">Elecciones<span>2025</span></h4>
             </div>
-            <div class="navbar-menu" id="open-navbar1">
-                <ul class="navbar-nav">
+            <div class="navbar-menu dark-mode" id="open-navbar1">
+                <ul class="navbar-nav dark-mode">
                     <li><a href="/resultado.html">Resultados</a></li>
                     <li><a href="/perfil.html">Perfil</a></li>
                     <li><button class="button_index btn-nav" id="registerButton">Registrarse</button></li>
                     <li><button class="button_index btn-nav" id="loginButton">Iniciar Sesión</button></li>
                    <li>
-                     <!-- Botón para cambiar entre modo claro (sol) y oscuro (luna) -->
-                    <div id="toggleMode"
-                    class="toggle-container">
-                    <!-- <img src="Imagenes/Luna.png" alt="" >
-                    <img src="Imagenes/Sol.png" alt="" > -->
-                    <div class="slider"></div>
+                    <div id="toggleMode" class="toggle-container">
+                        <div class="slider"></div>
                     </div>
                    </li>
                 </ul>
@@ -89,5 +85,7 @@
     </main>
     <footer> <small>&copy; 2025 Sistema de Votación | Todos los derechos reservados.</small></footer>
     <script src="index.js"></script>
+    <script src="/paginasJS/carrusel.js"></script>
+    <script src="/paginasJS/modoOscuro.js"></script>
 </body>
 </html>

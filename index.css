@@ -671,73 +671,52 @@ transition: background 0.3s;
 .btnVoto :hover {
 background-color: #31b364;
 }
-/*resultado_barras*/
+/* Estilos para la tabla de resultados */
 #resultsTable {
    height: 300px;
-   width: 100%; 
+   width: 100%;
    border-collapse: collapse;
+   margin: 20px 0;
+   font-family: Arial, sans-serif;
 }
 
-th, td{
+th, td {
    padding: 10px;
    text-align: left;
-   border:  1px solid #ddd;
+   border: 1px solid #ddd;
 }
 
+th {
+   background-color: #f4f4f4;
+   font-weight: bold;
+}
+
+/* Estilos para las barras de resultados */
 .result-bar {
    height: 20px;
-   width: 10%;
-   transition: width 0.5s;
+   width: 0%; 
+   transition: width 0.5s ease; 
    background-color: #ccc;
+   border-radius: 10px; 
 }
-#barOpcion1 {
+
+/* Colores personalizados para cada barra */
+#baropcionBukele {
    background-color: #73c8e5; 
 }
 
-#barOpcion2 {
-   background-color: #160f9c;
+#baropcionJuanOrlando {
+   background-color: #160f9c; 
 }
 
-#barOpcion3 {
-   background-color: #1341cb;
+#baropcionJavierMiley {
+   background-color: #1341cb; 
 }
 
-#barOpcion4 {
-   background-color: #df380f;
+#baropcionSalvadorNasrralla {
+   background-color: #df380f; 
 }
 
-/* dark mode */
-/* === Botón deslizante (modo claro/oscuro) === */
-.toggle-container {
-   display: flex; 
-   align-items: center; 
-   cursor: pointer; 
-   position: relative; 
-   width: 60px; 
-   height: 30px; 
-   border-radius: 20px; 
-   background: #f3f4f5; 
-   transition: background 0.5s; 
-}
-/* === Icono de Sol o Luna === */
-.icon {
-   width: 24px; 
-   height: 24px;
-   z-index: 2; 
-   margin-left: 5px; 
-}
-/* === Deslizador animado === */
-.slider {
-   position: absolute;
-   left: 5px; 
-   width: 24px;
-   height: 24px;
-   border-radius: 50%;
-   background: rgb(54, 225, 255); 
-   transition: left 0.5s; 
-}
-
-/* === Estilos del contenido === */
 
 /* === Footer === */
 footer {
@@ -751,40 +730,6 @@ footer > small {
    color: var(--colorThree);
    
 }
-
-/*  Modo Oscuro  */
-body.dark-mode {
-   background-color: #121212; 
-   color: #ffffff; 
-}
-
-/* Navbar en modo oscuro */
-body.dark-mode .navbar {
-   background: #1e1e1e;
-   border-bottom: 2px solid #444;
-}
-
-/* Slider en modo oscuro */
-body.dark-mode .slider {
-   left: 30px; 
-}
-
-/* Fondo del toggle en modo oscuro */
-body.dark-mode .toggle-container {
-   background: #444;
-}
-
-/*  modo oscuro */
-body.dark-mode .card {
-   background-color: #242424;
-   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
-/* Footer en modo oscuro */
-body.dark-mode footer {
-   background: #1e1e1e;
-}
-
 
 /* === Tarjetas de contenido === */
 .card {
@@ -817,35 +762,31 @@ body.dark-mode footer {
    padding: 10px;
 }
 
-/* === Modo Oscuro === */
-body.dark-mode {
-   background-color: #121212; /* Fondo oscuro */
-   color: #ffffff; 
+.toggle-container {
+   width: 50px;
+   height: 25px;
+   background-color: #ccc;
+   border-radius: 25px;
+   position: relative;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
 }
 
-/* Navbar en modo oscuro */
-body.dark-mode .navbar {
-   background: #1e1e1e;
-   border-bottom: 2px solid #444;
+.slider {
+   width: 20px;
+   height: 20px;
+   background-color: #fff;
+   border-radius: 50%;
+   position: absolute;
+   top: 2.5px;
+   left: 2.5px;
+   transition: transform 0.3s ease;
 }
 
-/* Slider en modo oscuro */
-body.dark-mode .slider {
-   left: 30px; 
-} 
-/* Fondo del toggle en modo oscuro */
-body.dark-mode .toggle-container {
-   background: #444;
+.dark-mode .toggle-container {
+   background-color: #333;
 }
 
-/* Tarjetas en modo oscuro */
-body.dark-mode .card {
-   background-color: #242424;
-   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+.dark-mode .slider {
+   transform: translateX(25px);
 }
-
-/* Footer en modo oscuro */
-body.dark-mode footer {
-   background: #1e1e1e;
-}
-

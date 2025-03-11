@@ -22,28 +22,6 @@ function getUserData() {
 
 // Ejecutar cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
-  const carruselContenedor = document.querySelector('.carrusel_contenedor');
-  const items = document.querySelectorAll('.carrusel-item');
-  const antesBtn = document.querySelector('.antes');
-  const sigueBtn = document.querySelector('.sigue');
-  let currentIndex = 0;
-
-  function updateCarrusel() {
-      const offset = -currentIndex * 100;
-      carruselContenedor.style.transform = `translateX(${offset}%)`;
-  }
-
-  antesBtn.addEventListener('click', function () {
-      currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
-      updateCarrusel();
-  });
-
-  sigueBtn.addEventListener('click', function () {
-      currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
-      updateCarrusel();
-  });
-
-  updateCarrusel();
 
   // Identificar la página actual
   const page = document.body.id;
@@ -80,54 +58,72 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Código para la página de inicio de sesión (login.html)
   if (page === 'loginPage') {
-      const showPasswordCheckbox = document.getElementById('mostrarcontraseña');
-      const passwordInput = document.getElementById('password');
-      showPasswordCheckbox.addEventListener('change', function () {
-          if (showPasswordCheckbox.checked) {
-              passwordInput.type = 'text';
-          } else {
-              passwordInput.type = 'password';
-          }
-      });
+    const showPasswordCheckbox = document.getElementById('mostrarcontraseña');
+    const passwordInput = document.getElementById('password');
 
-      document.getElementById('loginForm').addEventListener('submit', function (event) {
-          event.preventDefault();
+    // Mostrar/ocultar contraseña
+    if (showPasswordCheckbox && passwordInput) {
+        showPasswordCheckbox.addEventListener('change', function () {
+            passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+        });
+    }
 
-          let email = document.getElementById('email').value;
-          let password = document.getElementById('password').value;
+    // Manejar el envío del formulario
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-          // Obtener todos los usuarios
-          let users = getUserData();
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
 
-          // Buscar un usuario que coincida con el correo y la contraseña
-          let user = users.find(u => u.email === email && u.password === password);
+        let users = getUserData();
+        let user = users.find(u => u.email === email);
 
-          if (user) {
-              alert('Inicio de sesión exitoso');
-              window.location.href = 'voto.html';
-          } else {
-              alert('Correo electrónico o contraseña incorrectos. Por favor, inténtelo de nuevo.');
-          }
-      });
-  }
+        if (!user) {
+            alert('El correo electrónico no está registrado.');
+            return;
+        }
+
+        if (user.password === password) {
+            alert('Inicio de sesión exitoso');
+            localStorage.setItem('usuarioActual', JSON.stringify(user)); // Guardar usuario actual
+            window.location.href = 'voto.html';
+        } else {
+            alert('Contraseña incorrecta. Por favor, inténtelo de nuevo.');
+        }
+    });
+}
 
   // Código para la página de voto (voto.html)
   const form = document.querySelector('.form_voto');
   if (form) {
       form.addEventListener('submit', function (event) {
           event.preventDefault();
-
-          // Obtener el candidato seleccionado
+  
           const candidatoSeleccionado = document.querySelector('input[name="candidate"]:checked');
-
-          // Condiciones
+  
           if (candidatoSeleccionado) {
+              // Obtener el usuario actual (podrías guardar el usuario logueado en localStorage)
+              const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+  
+              if (!usuarioActual) {
+                  alert('Debes iniciar sesión para votar.');
+                  return;
+              }
+  
+              // Verificar si el usuario ya votó
+              let votos = JSON.parse(localStorage.getItem('votos')) || [];
+              const usuarioYaVoto = votos.some(voto => voto.usuario.email === usuarioActual.email);
+  
+              if (usuarioYaVoto) {
+                  alert('Ya has votado. No puedes votar más de una vez.');
+                  return;
+              }
+  
+              // Guardar el voto
+              votos.push({ usuario: usuarioActual, candidato: candidatoSeleccionado.value });
+              localStorage.setItem('votos', JSON.stringify(votos));
+  
               alert(`Has votado por: ${candidatoSeleccionado.value}`);
-
-              // Guardar el voto en localStorage
-              localStorage.setItem('voto', candidatoSeleccionado.value);
-
-              // Redirigir a la página de resultados
               window.location.href = 'resultado.html';
           } else {
               alert('Por favor, selecciona un candidato antes de votar.');
@@ -190,32 +186,33 @@ function handleSmallScreens() {
 
 handleSmallScreens();
 
-// Seleccionar los elementos HTML relevantes
-const toggleMode = document.getElementById('toggleMode');
-const modeIcon = document.getElementById('modeIcon');
+document.addEventListener('DOMContentLoaded', function () {
+    const votos = JSON.parse(localStorage.getItem('votos')) || [];
+    const candidatos = ['opcionBukele', 'opcionJuanOrlando', 'opcionJavierMiley', 'opcionSalvadorNasrralla'];
 
-// Función para alternar entre modo claro y oscuro
-const toggleDarkMode = () => {
-  document.body.classList.toggle('dark-mode');
-  // Verifica si el modo oscuro está activado
-  const isDarkMode = document.body.classList.contains('dark-mode');
+    // Contar votos por candidato
+    const conteoVotos = {};
+    candidatos.forEach(candidato => {
+        conteoVotos[candidato] = votos.filter(voto => voto.candidato === candidato).length;
+    });
 
-  // Guardar la preferencia en localStorage
-  localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-};
+    // Calcular el total de votos
+    const totalVotos = votos.length;
 
-// Escuchar el evento de clic en el botón
-toggleMode.addEventListener('click', toggleDarkMode);
+    // Actualizar el ancho de las barras de votos
+    candidatos.forEach(candidato => {
+        const votosCandidato = conteoVotos[candidato];
+        const porcentaje = totalVotos > 0 ? (votosCandidato / totalVotos) * 100 : 0;
 
-// Mantener el modo seleccionado al recargar la página
-window.addEventListener('DOMContentLoaded', () => {
-  const savedMode = localStorage.getItem('darkMode');
+        const barra = document.getElementById(`bar${candidato}`);
+        if (barra) {
+            barra.style.width = `${porcentaje}%`;
+        }
 
-  // Si el usuario tenía activado el modo oscuro, aplicarlo
-  if (savedMode === 'enabled') {
-      document.body.classList.add('dark-mode');
-      modeIcon.src = 'img/sol.png';
-      modeIcon.alt = 'Modo Claro';
-  }
+        // Mostrar el número de votos
+        const votosElement = document.getElementById(`votes${candidato}`);
+        if (votosElement) {
+            votosElement.textContent = votosCandidato;
+        }
+    });
 });
-
