@@ -8,6 +8,7 @@
     --colorBlueTwo: #296BE5;
     --colorThree: #2DA1CC;
     --colorNav: #ddd;
+    /* Colores dark */
     --principalDark:#121212;
     --textdark:#FFFFFF;
     --secundardark:#ddd;
@@ -472,7 +473,6 @@ a {
    border-radius: 14px;
    cursor: pointer;
    transition: background-color 0.3s ease;
-   /* margin: 0.5rem; */
 }
 
 .button_index:hover {
@@ -494,11 +494,9 @@ a {
    background-color: var(--cololrBlueOne);
    color: var(--colorWhite);
    border: none;
-   /* padding: 0.5rem 1rem; */
    border-radius: 14px;
    cursor: pointer;
    transition: background-color 0.3s ease;
-   /* margin: 0.5rem; */
 }
 
 .navbar .navbar-nav .btn-nav:hover {
@@ -514,8 +512,6 @@ a {
       font-size: 1.2rem;
    }
 }
-
-
 
 /* registro */
 #resgisterPage {
@@ -661,6 +657,7 @@ border-radius: 10px;
 display: block;
 margin-bottom: 8px;
 }
+
 .bntVoto {
 background-color:#264653;
 color:white;
@@ -677,10 +674,10 @@ background-color: #31b364;
 /*resultado_barras*/
 #resultsTable {
    height: 300px;
-   width: 100%; /*Ancho inicial de barra*/
+   width: 100%; 
    border-collapse: collapse;
-
 }
+
 th, td{
    padding: 10px;
    text-align: left;
@@ -709,46 +706,9 @@ th, td{
    background-color: #df380f;
 }
 
-
-
-
 /* dark mode */
-
-/* .body {
-   font-family: Arial, sans-serif; 
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box; 
-   background-color: #ffffff; 
-   color: #000000; 
-   transition: background-color 0.5s, color 0.5s; 
-} */
-
-
-/* === Barra de navegación === */
-/* .navbar {
-   display: flex; 
-   align-items: center; 
-   justify-content: flex-end; 
-   gap: 15px; 
-   padding: 15px;
-   background: #f0f0f0; 
-   border-bottom: 2px solid #ccc; 
-} */
-
-/* === Botones de "Registrarse" e "Iniciar sesión" === */
-/* .btn {
-   padding: 8px 15px;
-   border: none;
-   border-radius: 20px;
-   cursor: pointer;
-   background-color: #0047FF; 
-   color: white;
-   font-size: 14px;
-} */
-
 /* === Botón deslizante (modo claro/oscuro) === */
-/* .toggle-container {
+.toggle-container {
    display: flex; 
    align-items: center; 
    cursor: pointer; 
@@ -758,18 +718,16 @@ th, td{
    border-radius: 20px; 
    background: #f3f4f5; 
    transition: background 0.5s; 
-} */
-
+}
 /* === Icono de Sol o Luna === */
-/* .icon {
+.icon {
    width: 24px; 
    height: 24px;
    z-index: 2; 
    margin-left: 5px; 
-} */
-
+}
 /* === Deslizador animado === */
-/* .slider {
+.slider {
    position: absolute;
    left: 5px; 
    width: 24px;
@@ -777,18 +735,21 @@ th, td{
    border-radius: 50%;
    background: rgb(54, 225, 255); 
    transition: left 0.5s; 
-} */
+}
 
 /* === Estilos del contenido === */
-/* main {
-   padding: 20px;
-} */
 
 /* === Footer === */
 footer {
    text-align: center;
    padding: 10px;
    background: #f0f0f0;
+   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 1);
+}
+
+footer > small {
+   color: var(--colorThree);
+   
 }
 
 /*  Modo Oscuro  */
@@ -824,53 +785,6 @@ body.dark-mode footer {
    background: #1e1e1e;
 }
 
-/* Botones de "Registrarse" e "Iniciar sesión" */
-/* .btn {
-   padding: 8px 15px;
-   border: none;
-   border-radius: 20px;
-   cursor: pointer;
-   background-color: #0047FF;
-   color: white;
-   font-size: 14px;
-} */
-
-/* Botón deslizante modo claro/oscuro*/
-.toggle-container {
-   display: flex; 
-   align-items: center; 
-   cursor: pointer; 
-   position: relative; 
-   width: 60px; 
-   height: 30px; 
-   border-radius: 20px; 
-   background: #3500f6; 
-   transition: background 0.5s; 
-}
-
-/* Icono de Sol o Luna  */
-/* .icon {
-   width: 24px; 
-   height: 24px;
-   z-index: 2; 
-   margin-left: 5px; 
-} */
-
-/* Deslizador animado */
-.slider {
-   position: absolute;
-   left: 5px; 
-   width: 24px;
-   height: 24px;
-   border-radius: 50%;
-   background: white; 
-   transition: left 0.5s; 
-}
-
-/* === Estilos del contenido === */
-/* main {
-   padding: 20px;
-} */
 
 /* === Tarjetas de contenido === */
 .card {
@@ -903,17 +817,10 @@ body.dark-mode footer {
    padding: 10px;
 }
 
-/* === Footer === */
-footer {
-   text-align: center;
-   padding: 10px;
-   background: #f0f0f0;
-}
-
 /* === Modo Oscuro === */
 body.dark-mode {
    background-color: #121212; /* Fondo oscuro */
-   color: #ffffff; /* Texto claro */
+   color: #ffffff; 
 }
 
 /* Navbar en modo oscuro */
@@ -924,9 +831,8 @@ body.dark-mode .navbar {
 
 /* Slider en modo oscuro */
 body.dark-mode .slider {
-   left: 30px; /* Mueve el deslizador a la derecha */
-}
-
+   left: 30px; 
+} 
 /* Fondo del toggle en modo oscuro */
 body.dark-mode .toggle-container {
    background: #444;
