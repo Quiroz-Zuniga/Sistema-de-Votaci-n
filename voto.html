@@ -11,12 +11,15 @@
 <body id="VotoPage">
     <nav class="navbar">
         <div class="container">
+            
             <div class="navbar-header">
+              
                 <button class="navbar-toggler" data-toggle="open-navbar1">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
+                <img class="logo-proyecto" src="/Imagenes/LOGOProyecto.png" alt="LOGOProyecto">
                 <h4>Elecciones<span>2025</span></h4>
             </div>
 
@@ -33,38 +36,40 @@
     <h1 class="h1_voto">Votacion</h1>
     </header>
     <main class="main_voto">
+        <p class="p_vot">Seleccione su opcion:</p>
         <form id="VoteForm" class="form_voto">
-            <p class="p_vot">Seleccione su opcion:</p>
+            
             <div class="candidate">
-                <img src="/Imagenes/Bukele.jpg" alt="Imagen de Opcion Bukele" >
+                <img src="/Imagenes/Bukele400px.jpg" alt="Imagen de Opcion Bukele" >
                 <label>
-                    <input type="radio" name="candidate" value="opcionBukele" required>  
+                    
                     Nayib Bukele
+                    <input type="radio" name="candidate" value="opcionBukele" required>  
                 </label>
             </div>
             <div class="candidate">
-                <img src="/Imagenes/Juanchi.jpg" alt="Imagen de Opcion Juan Orlando Hernandez" >  
+                <img src="/Imagenes/Juanchi400px.jpg" alt="Imagen de Opcion Juan Orlando Hernandez" >  
                 <label>
-                    <input type="radio" name="candidate" value="opcionJuanOrlando">
                     Juán Orlando Hernandez  
+                    <input type="radio" name="candidate" value="opcionJuanOrlando">
                 </label>
             </div>
             <div class="candidate">
-                <img src="/Imagenes/mileyEstafa.jpg" alt="Opción  Miley" >
-                <label>
-                    <input type="radio" name="candidate" value="opcionJavierMiley" >  
+                <img src="/Imagenes/mileyEstafa400px.jpg" alt="Opción  Miley">
+                <label>  
                     Javier Miley 
+                    <input type="radio" name="candidate" value="opcionJavierMiley" >
                 </label>
             </div>
                 <div class="candidate">
-                <IMG src="/Imagenes/Salvador.jpg" alt="Imagen de Opcion Salvador Nasralla" >
+                <IMG src="/Imagenes/Salvador400px.jpg" alt="Imagen de Opcion Salvador Nasralla" >
                 <label>
-                <input type="radio" name="candidate" value="opcionSalvadorNasrralla">
                 Salvador Nasralla 
+                <input type="radio" name="candidate" value="opcionSalvadorNasrralla">
                 </label>
                 </div>
-                <button class="btnVoto" type="submit">Votar</button>
          </form>
+         <button class="btnVoto" type="submit">Votar</button>
         </main>
         <footer> <small>&copy; 2025 Sistema de Votación | Todos los derechos reservados.</small></footer>
         <script src="/index.js"></script>

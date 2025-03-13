@@ -260,6 +260,16 @@ a {
    }
    img{
       width: 200PX;
+      height: 100PX;
+      padding: 20px;
+   }
+   .container-items-menu img{
+      width: 200PX;
+      height: 200PX;
+      padding: 20px;
+   }
+    .carrusel-item img {
+      width: 200PX;
       height: 200PX;
       padding: 20px;
    }
@@ -271,7 +281,18 @@ a {
    background-color: var(--colorWhite);
    padding: 1rem 1.15rem;
    border-bottom: 1px solid #eceef3;
+   position: sticky;
+   top: 0;
+   z-index: 1;
 }
+
+.logo-proyecto {
+   width: 80px;
+   height: 80px;
+   margin: 0;
+   padding: 0;
+}
+
 
 @media (min-width: 576px) {
    .navbar .container {
@@ -282,6 +303,7 @@ a {
       height: 150PX;
       padding: 20px;
    }
+
 }
 @media (min-width: 768px) {
    .navbar .container {
@@ -291,6 +313,11 @@ a {
 @media (min-width: 992px) {
    .navbar .container {
      max-width: 960px;
+   }
+   img{
+      width: 150PX;
+      height: 150PX;
+      padding: 20px;
    }
 }
 @media (min-width: 1200px) {
@@ -311,6 +338,11 @@ a {
      align-items: center;
      justify-content: space-between;
      flex-direction: row-reverse;
+   }
+   img{
+      width: 150PX;
+      height: 150PX;
+      padding: 20px;
    }
 }
 
@@ -480,12 +512,9 @@ a {
 }
 
 /* Estilos adicionales para dispositivos móviles */
-@media (max-width: 768px) {
+@media (max-width <= 768px) {
    .button_index {
-      width: 100%;
-      padding: 1rem;
-      margin: 0.5rem 0;
-      font-size: 1.2rem;
+      background-color: var(--colorWhite);
    }
 }
 
@@ -633,43 +662,74 @@ button.sigue {
 }
 
 /* Voto*/
+.btnVoto {
+   margin: 20px;
+   padding: 10px;
+   background-color: var(--colorWhite);
+   border-radius: 4px;
+   color: var(--colorThree);
+   justify-self: center;
+   align-self: center;
+}
 .main_voto{
    display:flex;
-   flex-direction: column;
+   justify-content: center;
    align-items: center;
    margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   
   } 
-  .form_votos{
-   background: white;
+
+  .form_voto{
    padding: 20px;
    border-radius: 12px;
-   box-shadow: 0 4px 8px rgba(0,0,0.1);
+   margin-bottom: 20px;
+   display: flex;
+   gap: 20px;
 }
 
 .candidate {
    margin-bottom: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
+
+.candidate > label{
+   padding-top: 10px ;
+   display: flex;
+   flex-direction:row;
+   align-items: center;
+   gap: 10px;
+   justify-content: start;
+   font-size: 1.5rem;
+}
+
+.p_vot{
+   margin-bottom: 20px;
+}
+
+.h1_voto{
+   padding-top: 20px;
+}
+
+
+.main_voto > .btn-Votar{
+ padding: 50px;
+}
+
+
 
 .candidate img{
-width: 150px;
+width: 300px;
+height: 100px;
 height: auto;
 border-radius: 10px;
-display: block;
 margin-bottom: 8px;
-}
-
-.bntVoto {
-background-color:#264653;
-color:white;
-padding: 10px 20px;
-font-size: 16px;
-border-radius: 8px;
-cursor: pointer;
-transition: background 0.3s;
-
-}
-.btnVoto :hover {
-background-color: #31b364;
+box-shadow: 1px 1px 1px 2px rgba(45, 161, 204, 0.3);
 }
 /* Estilos para la tabla de resultados */
 #resultsTable {
@@ -790,3 +850,6 @@ footer > small {
 .dark-mode .slider {
    transform: translateX(25px);
 }
+
+
+/* Trabajando Media Queris de index */
