@@ -208,9 +208,10 @@
 }
 
 .container-items-menu img{
-   width: 500px;
-   height: 500px;
-
+   width: 400px;
+   height: 400px;
+   border-radius: 1000px;
+   filter: drop-shadow(2px 2px 5px #67c1af);
 }
 
 .container-items-text{
@@ -279,11 +280,12 @@ a {
 .navbar {
    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
    background-color: var(--colorWhite);
-   padding: 1rem 1.15rem;
+   padding: 0.1rem 0.15rem;
    border-bottom: 1px solid #eceef3;
    position: sticky;
    top: 0;
    z-index: 1;
+
 }
 
 .logo-proyecto {
@@ -788,7 +790,39 @@ footer {
 
 footer > small {
    color: var(--colorThree);
+   font-size: medium;
    
+}
+
+.containero{
+
+   padding: 30px;
+   margin:0 auto;
+   display: flex;
+   justify-content: space-around;
+
+}
+
+.container-items{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+.img-drop {
+   filter: drop-shadow(-1px 2px 5px #67c1af);
+   outline: 3px solid #10dad7;
+   box-shadow: 0px 0px 3px 3px #000000; 
+   border-radius: 100px 100px 7px 100px; 
+   width: 90px;
+   height: 90px;
+}
+
+footer > h4 {
+   font-size: medium;
+   padding-top: 14px;
+   color: var(--colorThree);
 }
 
 /* === Tarjetas de contenido === */
