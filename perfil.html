@@ -28,6 +28,50 @@
             </div>
         </div>
     </nav>  
-</body>
+    <!--Formulario para el perfil-->
+    <main class="perfil-container">
+        <main class="perfil-container">
+            <h2>Perfil de Usuario</h2>
+            <form id="perfilForm">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+    
+                <label for="documento">Documento de Identidad:</label>
+                <input type="text" id="documento" name="documento" required>
+    
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+    
+                <label for="telefono">Teléfono (opcional):</label>
+                <input type="tel" id="telefono" name="telefono">
+    
+                <label for="fecha">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha" name="fecha">
+    
+                <label for="region">Región de Votación:</label>
+                <input type="text" id="region" name="region" required>
+    
+                <label for="estadoVoto">Estado del Voto:</label>
+                <select id="estadoVoto" name="estadoVoto">
+                    <option value="pendiente">Pendiente</option>
+                    <option value="completado">Completado</option>
+                </select>
+    
+                <button type="submit">Guardar Perfil</button>
+            </form>
+    
+            <!-- Aqui se muestran los datos guardados -->
+            <div id="perfilInfo" class="hidden">
+                <h3>Información Guardada:</h3>
+                <p><strong>Nombre:</strong> <span id="mostrarNombre"></span></p>
+                <p><strong>Documento:</strong> <span id="mostrarDocumento"></span></p>
+                <p><strong>Correo:</strong> <span id="mostrarCorreo"></span></p>
+                <p><strong>Teléfono:</strong> <span id="mostrarTelefono"></span></p>
+                <p><strong>Fecha de Nacimiento:</strong> <span id="mostrarFecha"></span></p>
+                <p><strong>Región:</strong> <span id="mostrarRegion"></span></p>
+                <p><strong>Estado del Voto:</strong> <span id="mostrarEstado"></span></p>
+            </div>
+        </main>    
+           
 <script src="/index.js"></script>
 </html>

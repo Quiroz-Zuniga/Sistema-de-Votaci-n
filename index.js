@@ -1,4 +1,4 @@
-function SaveUserData(username, email, password) {
+function SaveUserData(username, email, password,documento,telefono,fecha,region,estadovoto) {
   // Obtener usuarios
   let users = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -6,13 +6,18 @@ function SaveUserData(username, email, password) {
   let newUsers = {
       username: username,
       email: email,
-      password: password
-  };
-
+      password: password,
+      documento:documento,
+      telefono: telefono,
+      fecha: fecha,
+      region: region,
+      estadovoto: estadovoto,
+};
+//Aqui guarda el nuevo usuario
   users.push(newUsers);
   // Guardar en localStorage
   localStorage.setItem('users', JSON.stringify(users));
-  console.log("Usuario guardado: ", users);
+  console.log("Usuario guardado: ", newUsers);
 }
 
 // Función para obtener los datos del usuario
@@ -27,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const page = document.body.id;
 
   // Código para la página de inicio (index.html)
-  if (page === 'indexPage') {
+  if (page === 'indexpage') {
+    
       document.getElementById('registerButton').addEventListener('click', function () {
           window.location.href = 'register.html';
       });
