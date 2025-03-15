@@ -668,13 +668,20 @@ button.sigue {
 
 /* Voto*/
 .btnVoto {
-   margin: 20px;
-   padding: 10px;
-   background-color: var(--colorWhite);
-   border-radius: 4px;
-   color: var(--colorThree);
+   margin: 5px;
+   padding: 15px 30px;
+   background-color: var(--cololrBlueOne);
+   border-radius: 12px;
+   color: var(--colorWhite);
    justify-self: center;
    align-self: center;
+   font-size: 1.5rem;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btnVoto:hover{
+   background-color:var(--colorBlueTwo);
+   color: var(--colorNav);
 }
 .main_voto{
    display:flex;
@@ -693,9 +700,20 @@ button.sigue {
    border-radius: 12px;
    margin-bottom: 20px;
    display: flex;
+   flex-direction: column;
    gap: 20px;
 }
+.conten-candidate{
+   display: flex;
+   gap: 10px;
+}
 
+.candidate label > img {
+   width: 65px;
+   height: 65px;
+   border: none;
+   box-shadow: none;
+}
 .candidate {
    margin-bottom: 20px;
    display: flex;
@@ -729,7 +747,7 @@ button.sigue {
 
 
 .candidate img{
-width: 300px;
+width: 280px;
 height: 100px;
 height: auto;
 border-radius: 10px;

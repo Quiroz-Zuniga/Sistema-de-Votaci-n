@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const page = document.body.id;
 
   // Código para la página de inicio (index.html)
-  if (page === 'indexpage') {
+  if (page === 'indexPage') {
     
       document.getElementById('registerButton').addEventListener('click', function () {
           window.location.href = 'register.html';
