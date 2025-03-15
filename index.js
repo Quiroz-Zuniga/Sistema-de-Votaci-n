@@ -1,4 +1,41 @@
-function SaveUserData(username, email, password,documento,telefono,fecha,region,estadovoto) {
+document.addEventListener('DOMContentLoaded', function () {
+    const page = document.body.id; 
+
+    // Este es el coddigo para cargar el perfil del usuario
+    if (page === 'perfilPage') {
+        const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual')); 
+        const votos = JSON.parse(localStorage.getItem('votos')) || []; // aqui es para obtener la lista de votos almacenados
+
+        if (usuarioActual) { 
+            // Si hay un usuario, se muestra su información nombre, correo ect.
+            document.getElementById('nombre').textContent = usuarioActual.username; // Muestra el nombre del usuario
+            document.getElementById('correo').textContent = usuarioActual.email; // Muestra el correo del usuario
+
+            // y esta es para buscar si el usuario ya votó
+            const votoUsuario = votos.find(voto => voto.usuario.email === usuarioActual.email);
+
+            if (votoUsuario) {
+                // Si el usuario ya votó, entoces actualiza la información en el perfil
+                document.getElementById('estadoVoto').textContent = "Votado";
+                document.getElementById('candidatoVotado').textContent = votoUsuario.candidato;
+            } else {
+                //Y aqui si el usuario no ha votado, entonces muestra el estado como "Pendiente"
+                document.getElementById('estadoVoto').textContent = "Pendiente";
+                document.getElementById('candidatoVotado').textContent = "No ha votado";
+            }
+        } else {
+            // Si no hay un usuario, redirige a la página de inicio de sesión
+            alert("No has iniciado sesión.");
+            window.location.href = "login.html";
+        }
+    }
+});
+//Aqui no se que codigo eliminar tengo sueno//
+
+
+
+
+function SaveUserData(username, email, password,estadovoto) {
   // Obtener usuarios
   let users = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -7,10 +44,6 @@ function SaveUserData(username, email, password,documento,telefono,fecha,region,
       username: username,
       email: email,
       password: password,
-      documento:documento,
-      telefono: telefono,
-      fecha: fecha,
-      region: region,
       estadovoto: estadovoto,
 };
 //Aqui guarda el nuevo usuario
@@ -94,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('usuarioActual', JSON.stringify(user)); // Guardar usuario actual
             window.location.href = 'voto.html';
         } else {
-            alert('Contraseña incorrecta. Por favor, inténtelo de nuevo.');
+            alert('Correo electronico o Contraseña incorrecta. Por favor, inténtelo de nuevo.');
         }
     });
 }
