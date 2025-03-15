@@ -79,10 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
         let email = document.getElementById('email').value;
+        let name = document.getElementById('email').value
         let password = document.getElementById('password').value;
 
         let users = getUserData();
-        let user = users.find(u => u.email === email);
+        let user = users.find(u => u.email === email || u.username === name);
 
         if (!user) {
             alert('El correo electrónico no está registrado.');
