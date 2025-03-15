@@ -1,0 +1,147 @@
+:root {
+    --principalDark: #222;
+    --textdark: #dddd;
+    --secundardark: #555;
+}
+
+/* Estilos generales en modo oscuro */
+body.dark-mode {
+    background-color: var(--principalDark) !important;
+    color: var(--textdark) !important;
+}
+
+/* Aplicar modo oscuro a todas las clases */
+body.dark-mode .bodyy ,
+body.dark-mode .navbar,
+body.dark-mode .container,
+body.dark-mode .navbar-header,
+body.dark-mode .navbar-toggler,
+body.dark-mode .navbar-toggler span,
+body.dark-mode .logo-proyecto,
+body.dark-mode h4,
+body.dark-mode h4 span,
+body.dark-mode .navbar-menu,
+body.dark-mode .navbar-nav,
+body.dark-mode .navbar-nav li,
+body.dark-mode .navbar-nav a,
+body.dark-mode .button_index,
+body.dark-mode .btn-nav,
+body.dark-mode #registerButton,
+body.dark-mode #loginButton,
+body.dark-mode .toggle-container,
+body.dark-mode .slider,
+body.dark-mode .heade_index,
+body.dark-mode .container-header,
+body.dark-mode .container-items-menu,
+body.dark-mode .container-items-text,
+body.dark-mode .h1_index,
+body.dark-mode .p_index,
+body.dark-mode .decorations,
+body.dark-mode .main_index,
+body.dark-mode .carrusel,
+body.dark-mode .carrusel_contenedor,
+body.dark-mode .carrusel-item,
+body.dark-mode .carrusel-item img,
+body.dark-mode .h3-partidos,
+body.dark-mode .P-partido,
+body.dark-mode .antes,
+body.dark-mode .sigue,
+body.dark-mode .card,
+body.dark-mode .card h5,
+body.dark-mode .card ul,
+body.dark-mode .card ul li,
+body.dark-mode footer,
+body.dark-mode footer h4,
+body.dark-mode .containero,
+body.dark-mode .container-items,
+body.dark-mode .img-drop,
+body.dark-mode footer a,
+body.dark-mode footer small {
+    background-color: var(--principalDark);
+    color: var(--textdark) !important;
+    border-color: var(--secundardark);
+}
+
+/* Estilos para botones en modo oscuro */
+body.dark-mode .button_index,
+body.dark-mode .btn-nav,
+body.dark-mode #registerButton,
+body.dark-mode #loginButton,
+body.dark-mode .antes,
+body.dark-mode .sigue {
+    background-color: var(--secundardark);
+    color: var(--principalDark);
+    border: 1px solid var(--textdark);
+    outline: 1.5px solid #10dad7;
+}
+
+body.dark-mode .button_index:hover,
+body.dark-mode .btn-nav:hover,
+body.dark-mode #registerButton:hover,
+body.dark-mode #loginButton:hover,
+body.dark-mode .antes:hover,
+body.dark-mode .sigue:hover {
+    color: #10dad7 !important;
+
+}
+
+/* Estilos para el toggle en modo oscuro */
+body.dark-mode .toggle-container {
+    background-color: var(--secundardark);
+}
+
+body.dark-mode .slider {
+    background-color: var(--principalDark);
+    transform: translateX(26px);
+}
+
+/* Estilos para enlaces en modo oscuro */
+body.dark-mode a {
+    color: var(--secundardark);
+}
+
+body.dark-mode a:hover {
+    color: var(--textdark);
+}
+
+/* Estilos para inputs y textareas en modo oscuro */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: var(--principalDark);
+    color: var(--textdark);
+    border: 1px solid var(--secundardark);
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: var(--secundardark);
+}
+
+.toggle-container {
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+body.dark-mode .toggle-container {
+    background-color: var(--secundardark);
+}
+
+body.dark-mode .slider {
+    background-color: var(--principalDark);
+    transform: translateX(26px);
+}

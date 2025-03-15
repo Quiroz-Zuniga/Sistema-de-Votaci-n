@@ -9,9 +9,6 @@
     --colorThree: #2DA1CC;
     --colorNav: #ddd;
     /* Colores dark */
-    --principalDark:#121212;
-    --textdark:#FFFFFF;
-    --secundardark:#ddd;
 }
 
 *{
@@ -444,6 +441,12 @@ a {
    color: var(--colorThree);
 }
 
+.list-toggle{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+}
 .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
    list-style: none;
    position: absolute;
@@ -856,34 +859,3 @@ footer > h4 {
    padding: 10px;
 }
 
-.toggle-container {
-   width: 50px;
-   height: 25px;
-   background-color: #ccc;
-   border-radius: 25px;
-   position: relative;
-   cursor: pointer;
-   transition: background-color 0.3s ease;
-}
-
-.slider {
-   width: 20px;
-   height: 20px;
-   background-color: #fff;
-   border-radius: 50%;
-   position: absolute;
-   top: 2.5px;
-   left: 2.5px;
-   transition: transform 0.3s ease;
-}
-
-.dark-mode .toggle-container {
-   background-color: #333;
-}
-
-.dark-mode .slider {
-   transform: translateX(25px);
-}
-
-
-/* Trabajando Media Queris de index */
