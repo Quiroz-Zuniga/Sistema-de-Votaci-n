@@ -23,7 +23,8 @@
             <div class="navbar-menu" id="open-navbar1">
                 <ul class="navbar-nav">
                     <li><a href="/Index.html">Inicio</a></li>
-                    <li><a href="/perfil.html">Perfil</a></li>
+                    <!-- <li><a href="/perfil.html">Perfil</a></li> -->
+                    <button onclick="imprimirpagina();" class="button_index btn-nav" aria-label="Imprimir resultados de la votación" >imprimir Resultado </button> 
                 </ul>
             </div>
         </div>
@@ -41,26 +42,35 @@
             <tr>
                 <td>Nayib Bukele</td>
                 <td id="votesopcionBukele">0</td>
-                <td><div class="result-bar" id="baropcionBukele"></div></td>
+                <td><div class="result-bar" id="baropcionBukele" style="width: 50%;"></div></td>
             </tr>
             <tr>
                 <td>Juán Orlando Hernandez</td>
                 <td id="votesopcionJuanOrlando">0</td>
-                <td><div class="result-bar" id="baropcionJuanOrlando"></div></td>
+                <td><div class="result-bar" id="baropcionJuanOrlando" style="width: 50%;"></div></td>
             </tr>
             <tr>
                 <td>Javier Miley</td>
                 <td id="votesopcionJavierMiley">0</td>
-                <td><div class="result-bar" id="baropcionJavierMiley"></div></td>
+                <td><div class="result-bar" id="baropcionJavierMiley" style="width: 50%;"></div></td>
             </tr>
             <tr>
                 <td>Salvador Nasralla</td>
                 <td id="votesopcionSalvadorNasrralla">0</td>
-                <td><div class="result-bar" id="baropcionSalvadorNasrralla"></div></td>
+                <td><div class="result-bar" id="baropcionSalvadorNasrralla" style="width: 50%;"></div></td>
             </tr>
         </table>
     </main>
-
+    <script>
+           function imprimirpagina() {
+        const bars = document.querySelectorAll('.result-bar');
+        bars.forEach(bar => {
+            bar.style.display = 'block';
+            bar.style.width = bar.dataset.width;
+        });
+        window.print();
+        }
+     </script>
     <script src="/index.js"></script>
 </body> 
 </html>

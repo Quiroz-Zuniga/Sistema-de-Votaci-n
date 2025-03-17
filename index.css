@@ -32,13 +32,14 @@
  }
  .heade_index h1{
     font-family: 'Nunito';
-    font-size: 5vw;
+    font-size: 3rem;
  }
 
  p{
     font-family: 'Nunito';
-    font-size: 2vw;
+    font-size: 2rem;
  }
+ 
 
  img{
     width: 400PX;
@@ -266,12 +267,6 @@ a {
       height: 200PX;
       padding: 20px;
    }
-    .carrusel-item img {
-      width: 200PX;
-      height: 200PX;
-      padding: 20px;
-   }
-  
 }
 
 .navbar {
@@ -355,6 +350,11 @@ a {
 @media (max-width: 768px) {
    .navbar .navbar-header .navbar-toggler {
      display: block;
+   }
+   .carrusel{
+      display: none;
+      padding: 0;
+      margin: 0;
    }
 }
 
@@ -893,4 +893,29 @@ h1 {
 .perfil-info p {
    font-size: 18px;
    margin: 10px 0;
+}
+
+/* CSS para imprimir */
+
+@media print {
+   .navbar, header, button {
+       display: none;
+   }
+   #resultsTable {
+       width: 100%;
+       border-collapse: collapse;
+   }
+   #resultsTable th, #resultsTable td {
+       border: 1px solid black;
+       padding: 8px;
+       text-align: left;
+   }
+   .result-bar {
+       -webkit-print-color-adjust: exact; 
+       print-color-adjust: exact; 
+       background-color: var(--cololrBlueOne) !important; 
+       display: block !important;
+       height: 20px;
+       width: var(--bar-width); 
+   }
 }
