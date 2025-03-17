@@ -32,12 +32,12 @@
  }
  .heade_index h1{
     font-family: 'Nunito';
-    font-size: 3rem;
+    font-size: 6vw;
  }
 
  p{
     font-family: 'Nunito';
-    font-size: 2rem;
+    font-size: 2vw;
  }
  
 
@@ -461,7 +461,7 @@ a {
    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
    z-index: 99999;
    border-radius: 0.75rem;
-   display: none;
+   display:
 }
 
 @media (max-width: 768px) {

@@ -1,24 +1,50 @@
-@media (max-width: 768px) {
+@media (width >= 768px) {
     .carrusel-item img{
         width: 400px;
         height: 400px;
     };
- }
-
- @media (max-width: 850px) {
-    .carrusel-item img{
-        width: 400px;
-        height: 400px;
-    };
- }
-
- @media (max-width: 580px) {
-    .carrusel-item img{
-        width: 400px;
-        height: 400px;
-    };
+    .heade_index h1{
+        font-family: 'Nunito';
+        font-size: 6vh;
+     }
+    
+     p{
+        font-family: 'Nunito';
+        font-size: 2vh;
+        text-align: left ;
+     }
  }
  
- @media (max-width: 380x) {
+ @media (width >= 375px) {
+    .carrusel-item img {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+    .button_index  {
+        height: 20px;
+        width: 120px ;
+        text-align: center;
+        font-size: 2vh ;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 20px ;
+     }
+     li{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+     }
 
+    .card{
+        text-align: center;
+        font-size: 2vh ;
+        width: 300px ;
+        margin-top: 0;
+    }
  }
