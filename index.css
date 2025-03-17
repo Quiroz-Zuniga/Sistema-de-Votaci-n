@@ -913,9 +913,24 @@ h1 {
    .result-bar {
        -webkit-print-color-adjust: exact; 
        print-color-adjust: exact; 
-       background-color: var(--cololrBlueOne) !important; 
+ 
        display: block !important;
        height: 20px;
        width: var(--bar-width); 
+   }
+   #baropcionBukele {
+      background-color:#df380f; 
+   }
+   
+   #baropcionJuanOrlando {
+      background-color: red; 
+   }
+   
+   #baropcionJavierMiley {
+      background-color: #1341cb; 
+   }
+   
+   #baropcionSalvadorNasrralla {
+      background-color: #2DA1CC; 
    }
 }
